@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Fibo.dir/fibo.cc.o"
   "CMakeFiles/Fibo.dir/main.cpp.o"
   "Fibo.pdb"
   "Fibo"

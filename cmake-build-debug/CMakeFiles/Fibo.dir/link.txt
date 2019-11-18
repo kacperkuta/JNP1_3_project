@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Fibo.dir/main.cpp.o  -o Fibo 
+/usr/bin/c++  -g   CMakeFiles/Fibo.dir/fibo.cc.o CMakeFiles/Fibo.dir/main.cpp.o  -o Fibo 

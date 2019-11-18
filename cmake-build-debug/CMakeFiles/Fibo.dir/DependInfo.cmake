@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/baka475/CLionProjects/JNP1_3_project/fibo.cc" "/home/baka475/CLionProjects/JNP1_3_project/cmake-build-debug/CMakeFiles/Fibo.dir/fibo.cc.o"
   "/home/baka475/CLionProjects/JNP1_3_project/main.cpp" "/home/baka475/CLionProjects/JNP1_3_project/cmake-build-debug/CMakeFiles/Fibo.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

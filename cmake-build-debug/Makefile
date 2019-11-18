@@ -123,6 +123,33 @@ Fibo/fast:
 	$(MAKE) -f CMakeFiles/Fibo.dir/build.make CMakeFiles/Fibo.dir/build
 .PHONY : Fibo/fast
 
+fibo.o: fibo.cc.o
+
+.PHONY : fibo.o
+
+# target to build an object file
+fibo.cc.o:
+	$(MAKE) -f CMakeFiles/Fibo.dir/build.make CMakeFiles/Fibo.dir/fibo.cc.o
+.PHONY : fibo.cc.o
+
+fibo.i: fibo.cc.i
+
+.PHONY : fibo.i
+
+# target to preprocess a source file
+fibo.cc.i:
+	$(MAKE) -f CMakeFiles/Fibo.dir/build.make CMakeFiles/Fibo.dir/fibo.cc.i
+.PHONY : fibo.cc.i
+
+fibo.s: fibo.cc.s
+
+.PHONY : fibo.s
+
+# target to generate assembly for a file
+fibo.cc.s:
+	$(MAKE) -f CMakeFiles/Fibo.dir/build.make CMakeFiles/Fibo.dir/fibo.cc.s
+.PHONY : fibo.cc.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Fibo"
 	@echo "... edit_cache"
+	@echo "... fibo.o"
+	@echo "... fibo.i"
+	@echo "... fibo.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

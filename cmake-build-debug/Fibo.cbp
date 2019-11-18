@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/baka475/CLionProjects/JNP1_3_project/fibo.cc">
+			<Option target="Fibo"/>
+		</Unit>
+		<Unit filename="/home/baka475/CLionProjects/JNP1_3_project/fibo.h">
+			<Option target="Fibo"/>
+		</Unit>
 		<Unit filename="/home/baka475/CLionProjects/JNP1_3_project/main.cpp">
 			<Option target="Fibo"/>
 		</Unit>

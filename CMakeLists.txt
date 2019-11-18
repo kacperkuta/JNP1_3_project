@@ -3,4 +3,4 @@ project(Fibo)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Fibo fibo.cc)
+add_executable(Fibo fibo.cc fibo.h main.cpp)
