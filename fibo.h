@@ -8,8 +8,12 @@ class Fibo {
 public:
     Fibo();
     explicit Fibo(const std::string&);
-    explicit Fibo(size_t);
-    explicit Fibo(Fibo&);
+    explicit Fibo(int);
+    explicit Fibo(unsigned int);
+    explicit Fibo(unsigned long);
+    explicit Fibo(unsigned long long);
+
+    Fibo(const Fibo&);
 
     Fibo& operator=(const Fibo&);
     Fibo& operator=(size_t);
@@ -72,7 +76,7 @@ private:
 
     std::vector<bool> normalized;
 
-    int normalized_length;
+    unsigned int normalized_length;
 
 };
 const Fibo Zero();

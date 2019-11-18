@@ -7,9 +7,32 @@ Fibo::Fibo() : Fibo(0) {};
 
 Fibo::Fibo(const std::string& s) : Fibo(convertFiboToInt(s)) {}
 
-Fibo::Fibo(size_t number) {
+Fibo::Fibo(int number) {
+    normalized = std::vector<bool>();
+    convertIntToFibo(normalized, (unsigned)number);
+}
+
+Fibo::Fibo(unsigned int number) {
     normalized = std::vector<bool>();
     convertIntToFibo(normalized, number);
+}
+
+Fibo::Fibo(unsigned long number) {
+    normalized = std::vector<bool>();
+    convertIntToFibo(normalized, number);
+}
+
+Fibo::Fibo(unsigned long long number) {
+    normalized = std::vector<bool>();
+    convertIntToFibo(normalized, number);
+}
+
+Fibo::Fibo(const Fibo& other) {
+    normalized_length = other.normalized_length;
+    normalized = std::vector<bool>(normalized_length);
+    for (int i = 0; i < normalized_length; i++) {
+        normalized[i] = other.normalized[i];
+    }
 }
 
 const Fibo Zero() {
