@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Fibo.dir/main.cpp.o  -o Fibo 

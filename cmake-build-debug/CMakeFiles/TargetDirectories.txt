@@ -1,0 +1,3 @@
+/home/baka475/CLionProjects/JNP1_3_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/baka475/CLionProjects/JNP1_3_project/cmake-build-debug/CMakeFiles/Fibo.dir
+/home/baka475/CLionProjects/JNP1_3_project/cmake-build-debug/CMakeFiles/edit_cache.dir
