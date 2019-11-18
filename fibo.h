@@ -7,9 +7,9 @@
 class Fibo {
 public:
     Fibo();
-    Fibo(const std::string&);
-    Fibo(size_t);
-    Fibo(Fibo&);
+    explicit Fibo(const std::string&);
+    explicit Fibo(size_t);
+    explicit Fibo(Fibo&);
 
     Fibo& operator=(const Fibo&);
     Fibo& operator=(size_t);
