@@ -1,5 +1,8 @@
 #include <iostream>
 #include <vector>
+#include <cassert>
+#include <cmath>
+#include <algorithm>
 
 #include "fibo.h"
 
@@ -10,8 +13,10 @@ Fibo::Fibo(const std::string& s) {
     size_t length = s.length() + 1;
 
     normalized = std::vector<bool>(length);
+    normalized_length = length;
 
     for (size_t i = 1; i < length; i++) {
+        //assert(s[i] == '1' || s[i] == '0');
         normalized[i] = s[i - 1] == '1';
     }
 
@@ -20,6 +25,7 @@ Fibo::Fibo(const std::string& s) {
 }
 
 Fibo::Fibo(int number) {
+    assert(number >= 0);
     normalized = std::vector<bool>();
     convertIntToFibo(normalized, (unsigned)number);
 }
@@ -167,7 +173,66 @@ bool operator!=(long long num, const Fibo& other) {
     return Fibo((unsigned long long)num) != other;
 }
 
-void Fibo::convertIntToFibo(std::vector<bool>& normalized, long long number) {
+Fibo& Fibo::operator<<=(unsigned long long n) {
+    normalized_length += n;
+    normalized.resize(normalized_length);
+    for (size_t i = normalized_length - n; i < normalized_length; i++) {
+        normalized[i] = false;
+    }
+    return *this;
+}
+
+Fibo operator<<(Fibo f, unsigned long long n) {
+    return f <<= n;
+}
+
+Fibo& Fibo::operator|=(const Fibo& f) {
+    if (f.normalized_length >= normalized_length) {
+
+        size_t diff = f.normalized_length - normalized_length;
+        normalized.resize(f.normalized_length + 1);
+        std::reverse(normalized.begin(), normalized.end());
+        std::reverse(normalized.begin() + diff + 1, normalized.end());
+        this->printFibo();
+        std::cout << std::endl;
+        for (int i = 0; i < f.normalized_length; i++) {
+            normalized[i + 1] = normalized[i + 1] || f.normalized[i];
+        }
+        normalized_length += diff + 1;
+    } else {
+
+        size_t diff = normalized_length - f.normalized_length;
+        normalized.resize(normalized_length + 1);
+
+        std::reverse(normalized.begin(), normalized.end());
+        std::reverse(normalized.begin() + 1, normalized.end());
+
+        for (int i = 0; i < f.normalized_length; i++) {
+            normalized[i + 1 + diff] = normalized[i + 1 + diff] ||
+                    f.normalized[i];
+        }
+        normalized_length++;
+    }
+    normalizeBackwards(normalized, normalized_length);
+    normalizeForwards(normalized, normalized_length);
+    return *this;
+}
+Fibo& Fibo::operator|=(unsigned long long num) {
+    return *this |= Fibo(num);
+}
+
+Fibo operator|(unsigned long long num, const Fibo& f) {
+    return Fibo(num) |= f;
+}
+Fibo Fibo::operator|(const Fibo& f) {
+    return Fibo(*this) |= f;
+}
+Fibo Fibo::operator|(unsigned long long num) {
+    return Fibo(num) |= *this;
+}
+
+void Fibo::convertIntToFibo(std::vector<bool>& normalized,
+        unsigned long long number) {
     size_t f1 = 1;
     size_t f2 = 1;
     unsigned int i = 1;

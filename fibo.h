@@ -20,39 +20,39 @@ public:
     explicit Fibo(T) = delete;
 
     Fibo& operator=(const Fibo&);
-    Fibo& operator=(long long);
+    Fibo& operator=(unsigned long long);
 
     friend bool operator+(long long, const Fibo&);
     Fibo operator+(const Fibo&);
-    Fibo operator+(long long);
+    Fibo operator+(unsigned long long);
 
     friend bool operator&(long long, const Fibo&);
     Fibo operator&(const Fibo&);
-    Fibo operator&(long long);
+    Fibo operator&(unsigned long long);
 
-    friend bool operator|(long long, const Fibo&);
+    friend Fibo operator|(unsigned long long, const Fibo&);
     Fibo operator|(const Fibo&);
-    Fibo operator|(long long);
+    Fibo operator|(unsigned long long);
 
     friend bool operator^(long long, const Fibo&);
     Fibo operator^(const Fibo&);
-    Fibo operator^(long long);
+    Fibo operator^(unsigned long long);
 
-    Fibo operator<<(long long);
+    friend Fibo operator<<(Fibo, unsigned long long);
 
     Fibo& operator+=(const Fibo&);
-    Fibo& operator+=(long long);
+    Fibo& operator+=(unsigned long long);
 
     Fibo& operator&=(const Fibo&);
-    Fibo& operator&=(long long);
+    Fibo& operator&=(unsigned long long);
 
     Fibo& operator|=(const Fibo&);
-    Fibo& operator|=(long long);
+    Fibo& operator|=(unsigned long long);
 
     Fibo& operator^=(const Fibo&);
-    Fibo& operator^=(long long);
+    Fibo& operator^=(unsigned long long);
 
-    Fibo& operator<<=(long long);
+    Fibo& operator<<=(unsigned long long);
 
     friend bool operator>(long long, const Fibo&);
     bool operator>(const Fibo&);
@@ -84,7 +84,8 @@ public:
 
 private:
 
-    void convertIntToFibo(std::vector<bool>& normalized, long long number);
+    void convertIntToFibo(std::vector<bool>& normalized,
+            unsigned long long number);
 
     void normalizeForwards(std::vector<bool>& v, size_t length);
 
