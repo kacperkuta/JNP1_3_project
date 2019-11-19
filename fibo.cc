@@ -3,6 +3,7 @@
 
 #include "fibo.h"
 
+//constructors
 Fibo::Fibo() : Fibo(0) {};
 
 Fibo::Fibo(const std::string& s) : Fibo(convertFiboToInt(s)) {}
@@ -35,12 +36,82 @@ Fibo::Fibo(const Fibo& other) {
     }
 }
 
+//functions Zero() and One()
 const Fibo Zero() {
     return Fibo(0);
 }
 
 const Fibo One() {
     return Fibo(1);
+}
+
+//operations
+bool Fibo::operator==(const Fibo& other) {
+    if (other.normalized_length != normalized_length)
+        return false;
+
+    for (int i = 0; i < normalized_length; i++) {
+        if (other.normalized[i] != normalized[i])
+            return false;
+    }
+    return true;
+}
+bool Fibo::operator==(size_t num) {
+    return *this == Fibo(num);
+}
+
+bool Fibo::operator>(const Fibo& other) {
+    if (other.normalized_length != normalized_length)
+        return normalized_length > other.normalized_length;
+
+    for (int i = 0; i < normalized_length; i++) {
+        if (other.normalized[i] > normalized[i])
+            return false;
+        else if (other.normalized[i] < normalized[i])
+            return true;
+    }
+    return false;
+}
+bool Fibo::operator>(size_t num) {
+    return *this > Fibo(num);
+}
+
+bool Fibo::operator>=(const Fibo& other) {
+    //czy lepiej skopiować kod czy mniej optymalnie kprzystajac z > i ==?
+    if (other.normalized_length != normalized_length)
+        return normalized_length > other.normalized_length;
+
+    for (int i = 0; i < normalized_length; i++) {
+        if (other.normalized[i] > normalized[i])
+            return false;
+        else if (other.normalized[i] < normalized[i])
+            return true;
+    }
+    return true;
+}
+bool Fibo::operator>=(size_t num) {
+    return *this >= Fibo(num);
+}
+
+bool Fibo::operator<(const Fibo& other) {
+    return !(*this >= other);
+}
+bool Fibo::operator<(size_t num) {
+    return *this < Fibo(num);
+}
+
+bool Fibo::operator<=(const Fibo& other) {
+    return !(*this > other);
+}
+bool Fibo::operator<=(size_t num) {
+    return *this <= Fibo(num);
+}
+
+bool Fibo::operator!=(const Fibo& other) {
+    return !(*this == other);
+}
+bool Fibo::operator!=(size_t num) {
+    return *this != Fibo(num);
 }
 
 void Fibo::convertIntToFibo(std::vector<bool>& normalized, size_t number) {
@@ -81,7 +152,7 @@ size_t Fibo::convertFiboToInt(const std::string& s) {
     return result;
 }
 
-int Fibo::length() {
+size_t Fibo::length() {
     return normalized_length;
 }
 
