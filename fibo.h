@@ -16,57 +16,67 @@ public:
 
     Fibo(const Fibo&);
 
-
+    template<class T>
+    explicit Fibo(T) = delete;
 
     Fibo& operator=(const Fibo&);
-    Fibo& operator=(size_t);
+    Fibo& operator=(long long);
 
+    friend bool operator+(long long, const Fibo&);
     Fibo operator+(const Fibo&);
-    Fibo operator+(size_t);
+    Fibo operator+(long long);
 
+    friend bool operator&(long long, const Fibo&);
     Fibo operator&(const Fibo&);
-    Fibo operator&(size_t);
+    Fibo operator&(long long);
 
+    friend bool operator|(long long, const Fibo&);
     Fibo operator|(const Fibo&);
-    Fibo operator|(size_t);
+    Fibo operator|(long long);
 
+    friend bool operator^(long long, const Fibo&);
     Fibo operator^(const Fibo&);
-    Fibo operator^(size_t);
+    Fibo operator^(long long);
 
-    Fibo operator<<(size_t);
+    Fibo operator<<(long long);
 
     Fibo& operator+=(const Fibo&);
-    Fibo& operator+=(size_t);
+    Fibo& operator+=(long long);
 
     Fibo& operator&=(const Fibo&);
-    Fibo& operator&=(size_t);
+    Fibo& operator&=(long long);
 
     Fibo& operator|=(const Fibo&);
-    Fibo& operator|=(size_t);
+    Fibo& operator|=(long long);
 
     Fibo& operator^=(const Fibo&);
-    Fibo& operator^=(size_t);
+    Fibo& operator^=(long long);
 
-    Fibo& operator<<=(int);
+    Fibo& operator<<=(long long);
 
-
+    friend bool operator>(long long, const Fibo&);
     bool operator>(const Fibo&);
-    bool operator>(size_t);
+    bool operator>(long long);
 
+    friend bool operator>=(long long, const Fibo&);
     bool operator>=(const Fibo&);
-    bool operator>=(size_t);
+    bool operator>=(long long);
 
+    friend bool operator==(long long, const Fibo&);
     bool operator==(const Fibo&);
-    bool operator==(size_t);
+    bool operator==(long long);
 
+    friend bool operator<=(long long, const Fibo&);
     bool operator<=(const Fibo&);
-    bool operator<=(size_t);
+    bool operator<=(long long);
 
+    friend bool operator<(long long, const Fibo&);
     bool operator<(const Fibo&);
-    bool operator<(size_t);
+    bool operator<(long long);
 
+    friend bool operator!=(long long, const Fibo&);
     bool operator!=(const Fibo&);
-    bool operator!=(size_t);
+    bool operator!=(long long);
 
     void printFibo();
 
@@ -74,9 +84,11 @@ public:
 
 private:
 
-    void convertIntToFibo(std::vector<bool>& normalized, size_t number);
+    void convertIntToFibo(std::vector<bool>& normalized, long long number);
 
-    size_t convertFiboToInt(const std::string& s);
+    void normalizeForwards(std::vector<bool>& v, size_t length);
+
+    void normalizeBackwards(std::vector<bool>& v, size_t length);
 
     std::vector<bool> normalized;
 
