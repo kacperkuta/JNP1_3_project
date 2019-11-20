@@ -24,6 +24,8 @@ Fibo::Fibo(const std::string& s) {
     normalizeForwards(normalized, length);
 }
 
+Fibo::Fibo(const char* s) : Fibo((std::string)s) {};
+
 Fibo::Fibo(int number) {
     assert(number >= 0);
     normalized = std::vector<bool>();
@@ -231,6 +233,7 @@ Fibo Fibo::operator|(unsigned long long num) {
     return Fibo(num) |= *this;
 }
 
+//private functions
 void Fibo::convertIntToFibo(std::vector<bool>& normalized,
         unsigned long long number) {
     size_t f1 = 1;
@@ -273,6 +276,11 @@ void Fibo::normalizeBackwards(std::vector<bool>& v, size_t length) {
             v[i] = false;
         }
     }
+}
+
+void Fibo::removeLeadingZeros() {
+    int count = 0;
+    
 }
 
 size_t Fibo::length() {

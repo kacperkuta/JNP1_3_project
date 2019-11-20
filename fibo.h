@@ -9,12 +9,14 @@ public:
     Fibo();
 
     explicit Fibo(const std::string&);
+    explicit Fibo(const char*);
     explicit Fibo(int);
     explicit Fibo(unsigned int);
     explicit Fibo(unsigned long);
     explicit Fibo(unsigned long long);
 
     Fibo(const Fibo&);
+    //~Fibo() = delete;
 
     template<class T>
     explicit Fibo(T) = delete;
@@ -22,35 +24,35 @@ public:
     Fibo& operator=(const Fibo&);
     Fibo& operator=(unsigned long long);
 
-    friend bool operator+(long long, const Fibo&);
+    friend Fibo operator+(long long, const Fibo&);
     Fibo operator+(const Fibo&);
     Fibo operator+(unsigned long long);
 
-    friend bool operator&(long long, const Fibo&);
+    friend Fibo operator&(long long, const Fibo&);
     Fibo operator&(const Fibo&);
     Fibo operator&(unsigned long long);
+
+    friend Fibo operator^(long long, const Fibo&);
+    Fibo operator^(const Fibo&);
+    Fibo operator^(unsigned long long);
+
+    Fibo& operator+=(const Fibo&);
+    Fibo& operator+=(unsigned long long);
+
+    Fibo& operator&=(unsigned long long);
+    Fibo& operator&=(const Fibo&);
+
+    Fibo& operator^=(const Fibo&);
+    Fibo& operator^=(unsigned long long);
 
     friend Fibo operator|(unsigned long long, const Fibo&);
     Fibo operator|(const Fibo&);
     Fibo operator|(unsigned long long);
 
-    friend bool operator^(long long, const Fibo&);
-    Fibo operator^(const Fibo&);
-    Fibo operator^(unsigned long long);
-
-    friend Fibo operator<<(Fibo, unsigned long long);
-
-    Fibo& operator+=(const Fibo&);
-    Fibo& operator+=(unsigned long long);
-
-    Fibo& operator&=(const Fibo&);
-    Fibo& operator&=(unsigned long long);
-
     Fibo& operator|=(const Fibo&);
     Fibo& operator|=(unsigned long long);
 
-    Fibo& operator^=(const Fibo&);
-    Fibo& operator^=(unsigned long long);
+    friend Fibo operator<<(Fibo, unsigned long long);
 
     Fibo& operator<<=(unsigned long long);
 
@@ -90,6 +92,8 @@ private:
     void normalizeForwards(std::vector<bool>& v, size_t length);
 
     void normalizeBackwards(std::vector<bool>& v, size_t length);
+
+    void removeLeadingZeros();
 
     std::vector<bool> normalized;
 
