@@ -25,52 +25,46 @@ public:
 
     Fibo& operator=(const Fibo&);
 
-    friend Fibo operator+(long long, const Fibo&);
-    Fibo operator+(const Fibo&);
-
-    friend Fibo operator&(long long, const Fibo&);
-    Fibo operator&(const Fibo&);
-
-    friend Fibo operator^(long long, const Fibo&);
-    Fibo operator^(const Fibo&);
-
     Fibo& operator+=(const Fibo&);
+
+    friend Fibo operator+(const Fibo&, const Fibo&);
 
     Fibo& operator&=(const Fibo&);
 
+    friend Fibo operator&(const Fibo&, const Fibo&);
+
     Fibo& operator^=(const Fibo&);
 
-    friend Fibo operator|(long long, const Fibo&);
-    Fibo operator|(const Fibo&);
+    friend Fibo operator^(const Fibo&, const Fibo&);
 
     Fibo& operator|=(const Fibo&);
 
-    friend Fibo operator<<(Fibo, long long);
+    friend Fibo operator|(const Fibo&, const Fibo&);
 
     Fibo& operator<<=(long long);
 
-    friend bool operator>(long long, const Fibo&);
-    bool operator>(const Fibo&);
+    friend Fibo operator<<(Fibo, long long);
 
-    friend bool operator>=(long long, const Fibo&);
-    bool operator>=(const Fibo&);
+
+    friend bool operator>(const Fibo&, const Fibo&);
+
+    friend bool operator>=(const Fibo&, const Fibo&);
 
     friend bool operator==(const Fibo&, const Fibo&);
 
-    friend bool operator<=(long long, const Fibo&);
-    bool operator<=(const Fibo&);
+    friend bool operator<=(const Fibo&, const Fibo&);
 
-    friend bool operator<(long long, const Fibo&);
-    bool operator<(const Fibo&);
+    friend bool operator<(const Fibo&, const Fibo&);
 
-    friend bool operator!=(long long, const Fibo&);
-    bool operator!=(const Fibo&);
+    friend bool operator!=(const Fibo&, const Fibo&);
 
-    void printFibo();
+    void printFibo() const;
 
     size_t length();
 
 private:
+
+    void convertStringToFibo(const std::string&);
 
     void convertIntToFibo(std::vector<bool>& normalized,
             long long number);

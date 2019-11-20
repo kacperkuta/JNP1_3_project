@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fibo.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="198">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
                 <element signature="e#41#58#0" expanded="true" />
               </folding>
@@ -41,11 +41,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fibo.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1205">
-              <caret line="188" column="38" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
+            <state relative-caret-position="-286">
+              <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#158#531#0" />
+                <element signature="e#158#199#0" />
+                <element signature="e#225#260#0" />
                 <element signature="e#587#728#0" />
                 <element signature="e#730#853#0" />
                 <element signature="e#855#983#0" />
@@ -56,22 +56,21 @@
                 <element signature="e#1576#1659#0" />
                 <element signature="e#1661#1701#0" />
                 <element signature="e#1703#1758#0" />
-                <element signature="e#2192#2578#0" />
-                <element signature="e#2579#2720#0" />
-                <element signature="e#2722#3182#0" />
-                <element signature="e#3183#3326#0" />
-                <element signature="e#3328#3401#0" />
-                <element signature="e#3402#3542#0" />
-                <element signature="e#3544#3617#0" />
-                <element signature="e#3618#3761#0" />
-                <element signature="e#3763#3837#0" />
-                <element signature="e#3838#3925#0" />
-                <element signature="e#3927#4185#0" />
-                <element signature="e#4187#4247#0" />
+                <element signature="e#1661#1706#0" />
+                <element signature="e#1658#2043#0" />
                 <element signature="e#4249#5408#0" />
                 <element signature="e#5409#5506#0" />
-                <element signature="e#5508#5576#0" />
+                <element signature="e#4633#4672#0" />
+                <element signature="e#5839#5922#0" />
+                <element signature="e#4384#5516#0" />
+                <element signature="e#5537#5621#0" />
+                <element signature="e#2579#2720#0" />
+                <element signature="e#3183#3326#0" />
+                <element signature="e#3024#3163#0" />
+                <element signature="e#3032#3166#0" />
+                <element signature="e#3838#3925#0" />
                 <element signature="e#5578#6111#0" />
+                <element signature="e#5583#5645#0" />
                 <element signature="e#6113#6365#0" />
                 <element signature="e#6367#6630#0" />
                 <element signature="e#6632#6687#0" />
@@ -84,11 +83,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="270">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
-                <element signature="e#0#2#0" />
-                <element signature="e#140#725#0" />
+                <element signature="e#42#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,6 +108,7 @@
       <find>unsigned long long</find>
       <find>size_t</find>
       <find>normalized_length</find>
+      <find>F</find>
     </findStrings>
     <replaceStrings>
       <replace>size_t</replace>
@@ -125,9 +124,9 @@
       <list>
         <option value="$PROJECT_DIR$/fib1o.cc" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/fibo.h" />
         <option value="$PROJECT_DIR$/fibo.cc" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/fibo.h" />
       </list>
     </option>
   </component>
@@ -201,7 +200,7 @@
       <workItem from="1574237338698" duration="3907000" />
       <workItem from="1574253520088" duration="1939000" />
       <workItem from="1574268802532" duration="2836000" />
-      <workItem from="1574273633369" duration="1546000" />
+      <workItem from="1574273633369" duration="12748000" />
     </task>
     <task id="LOCAL-00001" summary="Empty">
       <created>1574092750700</created>
@@ -266,11 +265,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574241227403</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Last backup before change of operators">
+      <created>1574275204342</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574275204342</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58496000" />
+    <option name="totallyTimeSpent" value="69698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1049" extended-state="6" />
@@ -281,14 +287,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12924425" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946523" visible="true" weight="0.20481928" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946523" weight="0.27601314" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005348" side_tool="true" weight="0.32968238" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32968238" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32968238" />
@@ -309,7 +315,8 @@
     <MESSAGE value="Improved operators with integers as firsts" />
     <MESSAGE value="Bit OR and Bit Shift added - not tested yet." />
     <MESSAGE value="Further improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Further improvements" />
+    <MESSAGE value="Last backup before change of operators" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last backup before change of operators" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fibo.cpp" />
@@ -320,34 +327,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#140#725#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fibo.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="198">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="e#41#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#42#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fibo.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1205">
-          <caret line="188" column="38" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
+        <state relative-caret-position="-286">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#158#531#0" />
+            <element signature="e#158#199#0" />
+            <element signature="e#225#260#0" />
             <element signature="e#587#728#0" />
             <element signature="e#730#853#0" />
             <element signature="e#855#983#0" />
@@ -358,22 +364,21 @@
             <element signature="e#1576#1659#0" />
             <element signature="e#1661#1701#0" />
             <element signature="e#1703#1758#0" />
-            <element signature="e#2192#2578#0" />
-            <element signature="e#2579#2720#0" />
-            <element signature="e#2722#3182#0" />
-            <element signature="e#3183#3326#0" />
-            <element signature="e#3328#3401#0" />
-            <element signature="e#3402#3542#0" />
-            <element signature="e#3544#3617#0" />
-            <element signature="e#3618#3761#0" />
-            <element signature="e#3763#3837#0" />
-            <element signature="e#3838#3925#0" />
-            <element signature="e#3927#4185#0" />
-            <element signature="e#4187#4247#0" />
+            <element signature="e#1661#1706#0" />
+            <element signature="e#1658#2043#0" />
             <element signature="e#4249#5408#0" />
             <element signature="e#5409#5506#0" />
-            <element signature="e#5508#5576#0" />
+            <element signature="e#4633#4672#0" />
+            <element signature="e#5839#5922#0" />
+            <element signature="e#4384#5516#0" />
+            <element signature="e#5537#5621#0" />
+            <element signature="e#2579#2720#0" />
+            <element signature="e#3183#3326#0" />
+            <element signature="e#3024#3163#0" />
+            <element signature="e#3032#3166#0" />
+            <element signature="e#3838#3925#0" />
             <element signature="e#5578#6111#0" />
+            <element signature="e#5583#5645#0" />
             <element signature="e#6113#6365#0" />
             <element signature="e#6367#6630#0" />
             <element signature="e#6632#6687#0" />
