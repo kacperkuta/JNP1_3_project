@@ -12,7 +12,11 @@ int main() {
 
     //odpalaj asercje pojedynczo
 
+
+    // to nie działa
     //assert((a << 6) == (a <<= 6));
+
+    //a to już tak...
     //assert(b == (a<<=6));
 
 }
