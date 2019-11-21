@@ -1,3 +1,5 @@
+// Fibo class by Mateusz Błajda and Kacper Kuta.
+
 #ifndef FIBO_FIBO_H
 #define FIBO_FIBO_H
 
@@ -5,7 +7,9 @@
 #include <vector>
 
 class Fibo {
+
 public:
+
     Fibo();
 
     explicit Fibo(const std::string&);
@@ -58,6 +62,7 @@ public:
 
     friend bool operator!=(const Fibo&, const Fibo&);
 
+
     std::string to_string() const;
 
     friend std::ostream& operator<<(std::ostream& os, const Fibo& f);
@@ -69,10 +74,6 @@ private:
     void convertStringToFibo(const std::string&);
 
     void convertIntToFibo(std::vector<bool>& normalized, long long number);
-
-    //void normalizeForwards(std::vector<bool>& v, size_t length);
-
-    //void normalizeBackwards(std::vector<bool>& v, size_t length);
 
     void removeLeadingZeros();
 

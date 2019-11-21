@@ -77,7 +77,6 @@ size_t Fibo::length() const {
 }
 
 //operations
-
 Fibo& Fibo::operator=(const Fibo& f) {
     normalized_length = f.normalized_length;
     normalized.resize(normalized_length);
@@ -126,9 +125,9 @@ Fibo& Fibo::operator|=(const Fibo& f) {
         size_t diff = f.normalized_length - normalized_length;
         normalized.resize(f.normalized_length + 1);
 
+        std::rotate(normalized.begin(), normalized.end() - diff - 1,
+                normalized.end());
 
-        std::reverse(normalized.begin(), normalized.end());
-        std::reverse(normalized.begin() + diff + 1, normalized.end());
         for (size_t i = 0; i < f.normalized_length; i++) {
             normalized[i + 1] = normalized[i + 1] || f.normalized[i];
         }
@@ -138,8 +137,7 @@ Fibo& Fibo::operator|=(const Fibo& f) {
         size_t diff = normalized_length - f.normalized_length;
         normalized.resize(normalized_length + 1);
 
-        std::reverse(normalized.begin(), normalized.end());
-        std::reverse(normalized.begin() + 1, normalized.end());
+        std::rotate(normalized.begin(), normalized.end() - 1, normalized.end());
 
         for (size_t i = 0; i < f.normalized_length; i++) {
             normalized[i + 1 + diff] = normalized[i + 1 + diff] ||
@@ -157,7 +155,6 @@ Fibo operator|(const Fibo& me, const Fibo& other) {
 }
 
 Fibo& Fibo::operator&=(const Fibo& f) {
-
     if (f.normalized_length >= normalized_length) {
 
         size_t diff = f.normalized_length - normalized_length;
@@ -168,8 +165,8 @@ Fibo& Fibo::operator&=(const Fibo& f) {
     } else {
         size_t diff = normalized_length - f.normalized_length;
 
-        std::reverse(normalized.begin(), normalized.end());
-        std::reverse(normalized.begin(), normalized.end() - diff);
+        std::rotate(normalized.begin(), normalized.begin() + diff,
+                normalized.end());
 
         normalized.resize(f.normalized_length);
         normalized_length = f.normalized_length;
@@ -191,10 +188,12 @@ Fibo& Fibo::operator^=(const Fibo& f) {
 
         size_t diff = f.normalized_length - normalized_length;
         normalized.resize(f.normalized_length + 1);
-        std::reverse(normalized.begin(), normalized.end());
-        std::reverse(normalized.begin() + diff + 1, normalized.end());
+
+        std::rotate(normalized.begin(), normalized.end() - diff - 1,
+                    normalized.end());
+
         for (size_t i = 0; i < f.normalized_length; i++) {
-            normalized[i + 1] = (normalized[i + 1] + f.normalized[i]) % 2;
+            normalized[i + 1] = normalized[i + 1] ^ f.normalized[i];
         }
         normalized_length += diff + 1;
     } else {
@@ -202,12 +201,11 @@ Fibo& Fibo::operator^=(const Fibo& f) {
         size_t diff = normalized_length - f.normalized_length;
         normalized.resize(normalized_length + 1);
 
-        std::reverse(normalized.begin(), normalized.end());
-        std::reverse(normalized.begin() + 1, normalized.end());
+        std::rotate(normalized.begin(), normalized.end() - 1, normalized.end());
 
         for (size_t i = 0; i < f.normalized_length; i++) {
-            normalized[i + 1 + diff] = (normalized[i + 1 + diff] +
-                                       f.normalized[i]) % 2;
+            normalized[i + 1 + diff] = normalized[i + 1 + diff] ^
+                    f.normalized[i];
         }
         normalized_length++;
     }
@@ -217,9 +215,7 @@ Fibo& Fibo::operator^=(const Fibo& f) {
 
 Fibo operator^(const Fibo& me, const Fibo& other) {
     return Fibo(me) ^= other;
-
 }
-
 
 bool operator>(const Fibo& me, const Fibo& other) {
     if (other.normalized_length != me.normalized_length)
@@ -260,8 +256,7 @@ bool operator!=(const Fibo& me, const Fibo& other) {
 }
 
 //private functions
-void Fibo::convertIntToFibo(std::vector<bool>& normalized,
-        long long number) {
+void Fibo::convertIntToFibo(std::vector<bool>& normalized, long long number) {
     long long f1 = 1;
     long long f2 = 1;
     unsigned int i = 1;
@@ -298,27 +293,6 @@ void Fibo::convertStringToFibo(const std::string& s) {
     normalize();
 }
 
-/*
-void Fibo::normalizeForwards(std::vector<bool>& v, size_t length) {
-    for (size_t i = 0; i < length - 2; i++) {
-        if (v[i + 1] && v[i + 2]) {
-            v[i] = true;
-            v[i + 1] = false;
-            v[i + 2] = false;
-        }
-    }
-}
-
-void Fibo::normalizeBackwards(std::vector<bool>& v, size_t length) {
-    for (size_t i = length - 1; i >= 2; i--) {
-        if (v[i - 1] && v[i] && !v[i - 2]) {
-            v[i - 2] = true;
-            v[i - 1] = false;
-            v[i] = false;
-        }
-    }
-}
-*/
 void Fibo::removeLeadingZeros() {
     size_t count = 0;
     size_t i = 0;
@@ -329,8 +303,9 @@ void Fibo::removeLeadingZeros() {
     }
     if (count == 0)
         return;
-    std::reverse(normalized.begin(), normalized.end());
-    std::reverse(normalized.begin(), normalized.end() - count);
+
+    std::rotate(normalized.begin(), normalized.begin() + count,
+            normalized.end());
 
     size_t new_length = normalized_length - count;
     new_length = new_length > 0 ? new_length : 1;
@@ -340,25 +315,24 @@ void Fibo::removeLeadingZeros() {
 }
 
 void Fibo::push(size_t pos) {
-    if(normalized[pos - 1]) {
-        normalized[pos-1] = false;
-        push(pos-2);
-    }
-    else{
+    if (normalized[pos - 1]) {
+        normalized[pos - 1] = false;
+        push(pos - 2);
+    } else {
         normalized[pos] = true;
     }
 }
 
 void Fibo::checkPush(size_t pos) {
-    if(pos > 1){
-        if(normalized[pos] && normalized[pos - 1]){
+    if (pos > 1) {
+        if (normalized[pos] && normalized[pos - 1]) {
             normalized[pos] = false;
             normalized[pos - 1] = false;
             push(pos - 2);
         }
     }
-    if(pos < normalized_length - 1 ){
-        if(normalized[pos + 1] && normalized[pos]){
+    if (pos < normalized_length - 1) {
+        if (normalized[pos + 1] && normalized[pos]) {
             normalized[pos + 1] = false;
             normalized[pos] = false;
             push(pos - 1);
@@ -368,18 +342,18 @@ void Fibo::checkPush(size_t pos) {
 
 void Fibo::normalize() {
     addZeros(2);
-    for(size_t i = 0; i < normalized_length - 1; i++){
-        if(normalized[i] && normalized[i+1]){
+    for (size_t i = 0; i < normalized_length - 1; i++) {
+        if (normalized[i] && normalized[i + 1]) {
             normalized[i] = false;
-            normalized[i+1] = false;
-            push(i-1);
+            normalized[i + 1] = false;
+            push(i - 1);
         }
     }
     removeLeadingZeros();
 }
 
 void Fibo::addZeros(size_t n) {
-    for(size_t i = 0; i < n; i++){
+    for (size_t i = 0; i < n; i++) {
         normalized.push_back(false);
     }
     std::rotate(normalized.rbegin(), normalized.rbegin() + n, normalized.rend());
@@ -387,21 +361,20 @@ void Fibo::addZeros(size_t n) {
 }
 
 void Fibo::addOne(size_t pos) {
-    while(normalized[pos])
-    {
+    while (normalized[pos]) {
         normalized[pos] = false;
-        if(pos == normalized_length - 2){
+        if (pos == normalized_length - 2) {
             normalized[normalized_length - 1] = true;
             normalized[normalized_length - 3] = true;
             checkPush(normalized_length - 3);
             return;
         }
-        if(pos > normalized_length - 2){
+        if (pos > normalized_length - 2) {
             normalized[normalized_length - 2] = true;
             checkPush(normalized_length - 2);
             return;
         }
-        if(pos > 0) {
+        if (pos > 0) {
             normalized[pos - 1] = true;
             checkPush(pos - 1);
         }
@@ -419,8 +392,8 @@ void Fibo::add(const Fibo &b) {
     addZeros(diff);
     aSize += diff;
 
-    for(size_t i = 0; i < bSize; i++) {
-        if(b.normalized[i]){
+    for (size_t i = 0; i < bSize; i++) {
+        if (b.normalized[i]) {
             size_t pos = i + (aSize - bSize);
             addOne(pos);
         }

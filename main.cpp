@@ -1,50 +1,34 @@
-#include <iostream>
-#include <cassert>
-
 #include "fibo.h"
-// tu wklej swoja klase
 
-using namespace std;
+#include <cassert>
+#include <iostream>
 
-const int n = 10;
+int main() {
+    Fibo f;
 
-int tab[n];
-string str[n];
+    assert(f == Zero());
+    assert(Fibo(f) == Zero());
+    assert(Zero() < One());
+    assert(Fibo("11") == Fibo("100"));
+    assert((Fibo("1001") + Fibo("10")) == Fibo("1011"));
+    assert((Fibo("1001") & Fibo("1100")) == Zero()); // 1100 == 10000
+    assert((Fibo("1100") | Fibo("11")) == Fibo("10100")); // 1100 == 10000, 11 == 100
+    assert((Fibo("1001") ^ Fibo("1010")) == Fibo("11"));
+    assert((Fibo("101") << 3) == Fibo("101000"));
 
-int main()
-{
+    f = One();
+    f <<= 3;
+    assert(f == Fibo("1000"));
 
-    // Poprawnościowe małe
+    f = One();
+    assert(f + Fibo("1") == Fibo("10"));
+    assert(f == One());
 
-    for (int i=0; i<n; i++) {
-        cin >> tab[i];
-    }
+    Fibo f1("101");
+    Fibo f2 = Fibo("101");
+    assert(f1 == f2);
 
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<=i; j++) {
-            assert((Fibo(tab[i]) + Fibo(tab[j])) == Fibo(tab[i]+tab[j]));
-            assert((Fibo(tab[i]) < Fibo(tab[j])) == (tab[i] < tab[j]));
-        }
-    }
+    assert(Fibo("11").length() == 3); // 11 == 100
 
-    for (int i=0; i<n; i++) {
-        cout << Fibo(tab[i]).length() << " " << Fibo(tab[i]) << "\n";
-    }
-
-    // Wydajnosciowe
-
-    for (int i=0; i<n; i++) {
-        cin >> str[i];
-    }
-
-    for (int i=0; i<n; i++) {
-        //cout << str[i] << endl;
-        for (int j=0; j<=i; j++) {
-            cout << (Fibo(str[i]) + Fibo(str[j])) << "\n";
-            cout << (Fibo(str[i]) | Fibo(str[j])) << "\n";
-            cout << (Fibo(str[i]) ^ Fibo(str[j])) << "\n";
-            cout << (Fibo(str[i]) & Fibo(str[j])) << "\n";
-        }
-    }
-
+    std::cout << Fibo("11") << std::endl; // prints 100
 }

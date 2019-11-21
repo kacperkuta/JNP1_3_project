@@ -14,9 +14,11 @@
     <list default="true" id="def6f4a6-101a-49ec-86ec-74162270c7d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fibo.cc" beforeDir="false" afterPath="$PROJECT_DIR$/fibo.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fibo.h" beforeDir="false" afterPath="$PROJECT_DIR$/fibo.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <ignored path="$PROJECT_DIR$/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +31,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fibo.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-88">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state>
+              <caret column="48" selection-start-column="48" selection-end-column="48" />
               <folding>
                 <element signature="e#41#58#0" expanded="true" />
+                <element signature="e#352#361#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,9 +44,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fibo.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="158" column="38" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
+            <state>
+              <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
               <folding>
+                <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#158#299#0" />
                 <element signature="e#302#482#0" />
                 <element signature="e#485#626#0" />
@@ -64,26 +68,26 @@
                 <element signature="e#2534#2594#0" />
                 <element signature="e#2596#3612#0" />
                 <element signature="e#3614#3698#0" />
-                <element signature="e#3700#4478#0" />
-                <element signature="e#4565#5608#0" />
-                <element signature="e#5610#5694#0" />
-                <element signature="e#5697#6111#0" />
-                <element signature="e#6113#6527#0" />
-                <element signature="e#6529#6609#0" />
-                <element signature="e#6611#6691#0" />
-                <element signature="e#6693#6774#0" />
-                <element signature="e#6776#7315#0" />
-                <element signature="e#7317#7646#0" />
-                <element signature="e#7648#8171#0" />
-                <element signature="e#7648#8676#0" />
-                <element signature="e#8678#8849#0" />
-                <element signature="e#8851#9288#0" />
-                <element signature="e#9290#9571#0" />
-                <element signature="e#9573#9794#0" />
-                <element signature="e#9796#10428#0" />
-                <element signature="e#10430#10855#0" />
-                <element signature="e#10857#10987#0" />
-                <element signature="e#11030#11096#0" />
+                <element signature="e#3700#4477#0" />
+                <element signature="e#4479#4562#0" />
+                <element signature="e#4564#5607#0" />
+                <element signature="e#5609#5693#0" />
+                <element signature="e#5696#6110#0" />
+                <element signature="e#6112#6526#0" />
+                <element signature="e#6528#6608#0" />
+                <element signature="e#6610#6690#0" />
+                <element signature="e#6692#6773#0" />
+                <element signature="e#6775#7314#0" />
+                <element signature="e#7316#7645#0" />
+                <element signature="e#7647#8675#0" />
+                <element signature="e#8677#8848#0" />
+                <element signature="e#8850#9287#0" />
+                <element signature="e#9289#9570#0" />
+                <element signature="e#9572#9793#0" />
+                <element signature="e#9795#10467#0" />
+                <element signature="e#10469#10894#0" />
+                <element signature="e#10896#11085#0" />
+                <element signature="e#11088#11189#0" />
               </folding>
             </state>
           </provider>
@@ -92,10 +96,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
+            <state relative-caret-position="594">
+              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#0#17#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,9 +137,9 @@
       <list>
         <option value="$PROJECT_DIR$/fib1o.cc" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/fibo.h" />
         <option value="$PROJECT_DIR$/fibo.cc" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/fibo.h" />
       </list>
     </option>
   </component>
@@ -151,7 +155,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,6 +166,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -211,7 +215,8 @@
       <workItem from="1574268802532" duration="2836000" />
       <workItem from="1574273633369" duration="19658000" />
       <workItem from="1574321871636" duration="480000" />
-      <workItem from="1574333958686" duration="4184000" />
+      <workItem from="1574333958686" duration="4986000" />
+      <workItem from="1574361957591" duration="5947000" />
     </task>
     <task id="LOCAL-00001" summary="Empty">
       <created>1574092750700</created>
@@ -311,22 +316,29 @@
       <option name="project" value="LOCAL" />
       <updated>1574335811005</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Passed tests by Staś">
+      <created>1574338172570</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1574338172570</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81272000" />
+    <option name="totallyTimeSpent" value="88021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1049" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17700535" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17914438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946523" weight="0.18510406" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946523" visible="true" weight="0.18510406" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978093" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -358,7 +370,8 @@
     <MESSAGE value="Everything excepting operator+" />
     <MESSAGE value="Non-working +" />
     <MESSAGE value="First complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="First complete" />
+    <MESSAGE value="Passed tests by Staś" />
+    <option name="LAST_COMMIT_MESSAGE" value="Passed tests by Staś" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fibo.cpp" />
@@ -371,19 +384,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fibo.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        <state>
+          <caret column="48" selection-start-column="48" selection-end-column="48" />
           <folding>
             <element signature="e#41#58#0" expanded="true" />
+            <element signature="e#352#361#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fibo.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="158" column="38" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
+        <state>
+          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
           <folding>
+            <element signature="e#0#19#0" expanded="true" />
             <element signature="e#158#299#0" />
             <element signature="e#302#482#0" />
             <element signature="e#485#626#0" />
@@ -404,36 +419,36 @@
             <element signature="e#2534#2594#0" />
             <element signature="e#2596#3612#0" />
             <element signature="e#3614#3698#0" />
-            <element signature="e#3700#4478#0" />
-            <element signature="e#4565#5608#0" />
-            <element signature="e#5610#5694#0" />
-            <element signature="e#5697#6111#0" />
-            <element signature="e#6113#6527#0" />
-            <element signature="e#6529#6609#0" />
-            <element signature="e#6611#6691#0" />
-            <element signature="e#6693#6774#0" />
-            <element signature="e#6776#7315#0" />
-            <element signature="e#7317#7646#0" />
-            <element signature="e#7648#8171#0" />
-            <element signature="e#7648#8676#0" />
-            <element signature="e#8678#8849#0" />
-            <element signature="e#8851#9288#0" />
-            <element signature="e#9290#9571#0" />
-            <element signature="e#9573#9794#0" />
-            <element signature="e#9796#10428#0" />
-            <element signature="e#10430#10855#0" />
-            <element signature="e#10857#10987#0" />
-            <element signature="e#11030#11096#0" />
+            <element signature="e#3700#4477#0" />
+            <element signature="e#4479#4562#0" />
+            <element signature="e#4564#5607#0" />
+            <element signature="e#5609#5693#0" />
+            <element signature="e#5696#6110#0" />
+            <element signature="e#6112#6526#0" />
+            <element signature="e#6528#6608#0" />
+            <element signature="e#6610#6690#0" />
+            <element signature="e#6692#6773#0" />
+            <element signature="e#6775#7314#0" />
+            <element signature="e#7316#7645#0" />
+            <element signature="e#7647#8675#0" />
+            <element signature="e#8677#8848#0" />
+            <element signature="e#8850#9287#0" />
+            <element signature="e#9289#9570#0" />
+            <element signature="e#9572#9793#0" />
+            <element signature="e#9795#10467#0" />
+            <element signature="e#10469#10894#0" />
+            <element signature="e#10896#11085#0" />
+            <element signature="e#11088#11189#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
+        <state relative-caret-position="594">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
