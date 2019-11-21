@@ -1,16 +1,48 @@
-#include "fibo.h"
 #include <iostream>
 #include <cassert>
-#include <cstdlib>
+
+#include "fibo.h"
+// tu wklej swoja klase
 
 using namespace std;
 
-int main() {
+const int n = 10;
 
-    Fibo a(1);
-    Fibo b(4);
+int tab[n];
+string str[n];
 
-    a+=b;
-    cout << a.printFibo();
+int main()
+{
+
+    // Poprawnościowe małe
+
+    for (int i=0; i<n; i++) {
+        cin >> tab[i];
+    }
+
+    for (int i=0; i<n; i++) {
+        for (int j=0; j<=i; j++) {
+            assert((Fibo(tab[i]) + Fibo(tab[j])) == Fibo(tab[i]+tab[j]));
+            assert((Fibo(tab[i]) < Fibo(tab[j])) == (tab[i] < tab[j]));
+        }
+    }
+
+    for (int i=0; i<n; i++) {
+        cout << Fibo(tab[i]).length() << " " << Fibo(tab[i]) << "\n";
+    }
+
+    // Wydajnosciowe
+
+    for (int i=0; i<n; i++) {
+        cin >> str[i];
+    }
+
+    for (int i=0; i<n; i++) {
+        for (int j=0; j<=i; j++) {
+            cout << (Fibo(str[i]) + Fibo(str[j])) << "\n";
+            cout << (Fibo(str[i]) | Fibo(str[j])) << "\n";
+            cout << (Fibo(str[i]) ^ Fibo(str[j])) << "\n";
+            cout << (Fibo(str[i]) & Fibo(str[j])) << "\n";
+        }
+    }
 }
-

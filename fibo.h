@@ -58,7 +58,9 @@ public:
 
     friend bool operator!=(const Fibo&, const Fibo&);
 
-    std::string printFibo() const;
+    std::string to_string() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Fibo& f);
 
     size_t length() const;
 

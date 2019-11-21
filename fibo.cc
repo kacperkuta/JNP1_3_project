@@ -125,6 +125,8 @@ Fibo& Fibo::operator|=(const Fibo& f) {
 
         size_t diff = f.normalized_length - normalized_length;
         normalized.resize(f.normalized_length + 1);
+
+
         std::reverse(normalized.begin(), normalized.end());
         std::reverse(normalized.begin() + diff + 1, normalized.end());
         for (size_t i = 0; i < f.normalized_length; i++) {
@@ -391,10 +393,12 @@ void Fibo::addOne(size_t pos) {
             normalized[normalized_length - 1] = true;
             normalized[normalized_length - 3] = true;
             checkPush(normalized_length - 3);
+            return;
         }
         if(pos > normalized_length - 2){
             normalized[normalized_length - 2] = true;
             checkPush(normalized_length - 2);
+            return;
         }
         if(pos > 0) {
             normalized[pos - 1] = true;
@@ -424,9 +428,14 @@ void Fibo::add(const Fibo &b) {
     removeLeadingZeros();
 }
 
-std::string Fibo::printFibo() const {
-    std::string s;
-    for (bool b : normalized)
-        s += b ? "1" : "0";
+std::string Fibo::to_string() const {
+    std::string s(normalized_length, ' ');
+    for (size_t i = 0; i < normalized_length; i++)
+        s[i] = normalized[i] ? '1' : '0';
     return s;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fibo& f) {
+    os << f.to_string();
+    return os;
+}
