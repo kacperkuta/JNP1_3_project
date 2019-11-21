@@ -7,17 +7,10 @@ using namespace std;
 
 int main() {
 
-    Fibo a("1001");
-    Fibo b = a << 6;
+    Fibo a(1);
+    Fibo b(4);
 
-    //odpalaj asercje pojedynczo
-
-
-    // to nie działa
-    //assert((a << 6) == (a <<= 6));
-
-    //a to już tak...
-    //assert(b == (a<<=6));
-
+    a+=b;
+    cout << a.printFibo();
 }
 

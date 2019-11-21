@@ -72,11 +72,12 @@ const Fibo One() {
     return Fibo(1);
 }
 
-size_t Fibo::length() {
+size_t Fibo::length() const {
     return normalized_length;
 }
 
 //operations
+
 Fibo& Fibo::operator=(const Fibo& f) {
     normalized_length = f.normalized_length;
     normalized.resize(normalized_length);
@@ -95,6 +96,15 @@ bool operator==(const Fibo& me, const Fibo& other) {
             return false;
     }
     return true;
+}
+
+Fibo& Fibo::operator+=(const Fibo& other) {
+    add(other);
+    return *this;
+}
+
+Fibo operator+(const Fibo& first, const Fibo& second) {
+    return Fibo(first) += second;
 }
 
 Fibo& Fibo::operator<<=(long long n) {
@@ -135,9 +145,7 @@ Fibo& Fibo::operator|=(const Fibo& f) {
         }
         normalized_length++;
     }
-    normalizeBackwards(normalized, normalized_length);
-    normalizeForwards(normalized, normalized_length);
-    removeLeadingZeros();
+    normalize();
     return *this;
 }
 
@@ -200,9 +208,7 @@ Fibo& Fibo::operator^=(const Fibo& f) {
         }
         normalized_length++;
     }
-    normalizeBackwards(normalized, normalized_length);
-    normalizeForwards(normalized, normalized_length);
-    removeLeadingZeros();
+    normalize();
     return *this;
 }
 
@@ -286,11 +292,10 @@ void Fibo::convertStringToFibo(const std::string& s) {
         normalized[i] = s[i - 1] == '1';
     }
 
-    normalizeBackwards(normalized, length);
-    normalizeForwards(normalized, length);
-    removeLeadingZeros();
+    normalize();
 }
 
+/*
 void Fibo::normalizeForwards(std::vector<bool>& v, size_t length) {
     for (size_t i = 0; i < length - 2; i++) {
         if (v[i + 1] && v[i + 2]) {
@@ -310,7 +315,7 @@ void Fibo::normalizeBackwards(std::vector<bool>& v, size_t length) {
         }
     }
 }
-
+*/
 void Fibo::removeLeadingZeros() {
     size_t count = 0;
     size_t i = 0;
@@ -331,8 +336,97 @@ void Fibo::removeLeadingZeros() {
     normalized_length = new_length;
 }
 
-void Fibo::printFibo() const {
+void Fibo::push(size_t pos) {
+    if(normalized[pos - 1]) {
+        normalized[pos-1] = false;
+        push(pos-2);
+    }
+    else{
+        normalized[pos] = true;
+    }
+}
+
+void Fibo::checkPush(size_t pos) {
+    if(pos > 1){
+        if(normalized[pos] && normalized[pos - 1]){
+            normalized[pos] = false;
+            normalized[pos - 1] = false;
+            push(pos - 2);
+        }
+    }
+    if(pos < normalized_length - 1 ){
+        if(normalized[pos + 1] && normalized[pos]){
+            normalized[pos + 1] = false;
+            normalized[pos] = false;
+            push(pos - 1);
+        }
+    }
+}
+
+void Fibo::normalize() {
+    addZeros(2);
+    for(size_t i = 0; i < normalized_length - 1; i++){
+        if(normalized[i] && normalized[i+1]){
+            normalized[i] = false;
+            normalized[i+1] = false;
+            push(i-1);
+        }
+    }
+    removeLeadingZeros();
+}
+
+void Fibo::addZeros(size_t n) {
+    for(size_t i = 0; i < n; i++){
+        normalized.push_back(false);
+    }
+    std::rotate(normalized.rbegin(), normalized.rbegin() + n, normalized.rend());
+    normalized_length += n;
+}
+
+void Fibo::addOne(size_t pos) {
+    while(normalized[pos])
+    {
+        normalized[pos] = false;
+        if(pos == normalized_length - 2){
+            normalized[normalized_length - 1] = true;
+            normalized[normalized_length - 3] = true;
+            checkPush(normalized_length - 3);
+        }
+        if(pos > normalized_length - 2){
+            normalized[normalized_length - 2] = true;
+            checkPush(normalized_length - 2);
+        }
+        if(pos > 0) {
+            normalized[pos - 1] = true;
+            checkPush(pos - 1);
+        }
+        pos += 2;
+    }
+    normalized[pos] = true;
+    checkPush(pos);
+}
+
+void Fibo::add(const Fibo &b) {
+    size_t aSize = normalized_length;
+    size_t bSize = b.length();
+    size_t diff = (aSize < bSize) ? bSize - aSize : 0;
+    diff += 4;
+    addZeros(diff);
+    aSize += diff;
+
+    for(size_t i = 0; i < bSize; i++) {
+        if(b.normalized[i]){
+            size_t pos = i + (aSize - bSize);
+            addOne(pos);
+        }
+    }
+    normalized_length = aSize;
+    removeLeadingZeros();
+}
+
+std::string Fibo::printFibo() const {
+    std::string s;
     for (bool b : normalized)
-        std::cout << b;
-    std::cout << std::endl;
+        s += b ? "1" : "0";
+    return s;
 };

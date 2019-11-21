@@ -58,22 +58,33 @@ public:
 
     friend bool operator!=(const Fibo&, const Fibo&);
 
-    void printFibo() const;
+    std::string printFibo() const;
 
-    size_t length();
+    size_t length() const;
 
 private:
 
     void convertStringToFibo(const std::string&);
 
-    void convertIntToFibo(std::vector<bool>& normalized,
-            long long number);
+    void convertIntToFibo(std::vector<bool>& normalized, long long number);
 
-    void normalizeForwards(std::vector<bool>& v, size_t length);
+    //void normalizeForwards(std::vector<bool>& v, size_t length);
 
-    void normalizeBackwards(std::vector<bool>& v, size_t length);
+    //void normalizeBackwards(std::vector<bool>& v, size_t length);
 
     void removeLeadingZeros();
+
+    void addZeros(size_t);
+
+    void push(size_t pos);
+
+    void checkPush(size_t pos);
+
+    void normalize();
+
+    void addOne(size_t pos);
+
+    void add(const Fibo&);
 
     std::vector<bool> normalized;
 
