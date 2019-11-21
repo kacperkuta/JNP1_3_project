@@ -14,7 +14,6 @@
     <list default="true" id="def6f4a6-101a-49ec-86ec-74162270c7d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fibo.cc" beforeDir="false" afterPath="$PROJECT_DIR$/fibo.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fibo.h" beforeDir="false" afterPath="$PROJECT_DIR$/fibo.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -42,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fibo.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="331">
+              <caret line="158" column="38" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
               <folding>
                 <element signature="e#158#299#0" />
                 <element signature="e#302#482#0" />
@@ -66,7 +65,6 @@
                 <element signature="e#2596#3612#0" />
                 <element signature="e#3614#3698#0" />
                 <element signature="e#3700#4478#0" />
-                <element signature="e#4480#4563#0" />
                 <element signature="e#4565#5608#0" />
                 <element signature="e#5610#5694#0" />
                 <element signature="e#5697#6111#0" />
@@ -94,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            <state relative-caret-position="675">
+              <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -213,7 +211,7 @@
       <workItem from="1574268802532" duration="2836000" />
       <workItem from="1574273633369" duration="19658000" />
       <workItem from="1574321871636" duration="480000" />
-      <workItem from="1574333958686" duration="1834000" />
+      <workItem from="1574333958686" duration="4184000" />
     </task>
     <task id="LOCAL-00001" summary="Empty">
       <created>1574092750700</created>
@@ -306,11 +304,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574295278940</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="First complete">
+      <created>1574335811005</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1574335811005</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78922000" />
+    <option name="totallyTimeSpent" value="81272000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1049" extended-state="6" />
@@ -352,7 +357,8 @@
     <MESSAGE value="Last backup before change of operators" />
     <MESSAGE value="Everything excepting operator+" />
     <MESSAGE value="Non-working +" />
-    <option name="LAST_COMMIT_MESSAGE" value="Non-working +" />
+    <MESSAGE value="First complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="First complete" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fibo.cpp" />
@@ -375,8 +381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fibo.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="331">
+          <caret line="158" column="38" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
           <folding>
             <element signature="e#158#299#0" />
             <element signature="e#302#482#0" />
@@ -399,7 +405,6 @@
             <element signature="e#2596#3612#0" />
             <element signature="e#3614#3698#0" />
             <element signature="e#3700#4478#0" />
-            <element signature="e#4480#4563#0" />
             <element signature="e#4565#5608#0" />
             <element signature="e#5610#5694#0" />
             <element signature="e#5697#6111#0" />
@@ -425,8 +430,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="675">
+          <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

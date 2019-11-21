@@ -157,11 +157,12 @@ Fibo operator|(const Fibo& me, const Fibo& other) {
 }
 
 Fibo& Fibo::operator&=(const Fibo& f) {
+
     if (f.normalized_length >= normalized_length) {
 
         size_t diff = f.normalized_length - normalized_length;
 
-        for (size_t i = 0; i < f.normalized_length; i++) {
+        for (size_t i = 0; i < normalized_length; i++) {
             normalized[i] = normalized[i] && f.normalized[i + diff];
         }
     } else {

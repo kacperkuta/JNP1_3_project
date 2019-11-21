@@ -38,6 +38,7 @@ int main()
     }
 
     for (int i=0; i<n; i++) {
+        //cout << str[i] << endl;
         for (int j=0; j<=i; j++) {
             cout << (Fibo(str[i]) + Fibo(str[j])) << "\n";
             cout << (Fibo(str[i]) | Fibo(str[j])) << "\n";
@@ -45,4 +46,5 @@ int main()
             cout << (Fibo(str[i]) & Fibo(str[j])) << "\n";
         }
     }
+
 }
